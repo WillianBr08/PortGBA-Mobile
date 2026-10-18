@@ -1,6 +1,6 @@
 # Mapa do GBA Studio
 
-Verificado em 18/10/2026, a partir de b5e5519. Escopo: gerador web, interface Android, preparação de bases e empacotamento desktop. Fontes são autoridade; este mapa é um índice.
+Verificado em 18/10/2026, entrega v1.1.0 (código 1b29bf7). Escopo: gerador web, interface Android, preparação de bases e empacotamento desktop. Fontes são autoridade; este mapa é um índice.
 
 | Tarefa | Responsável | Próximo arquivo/comando |
 |---|---|---|

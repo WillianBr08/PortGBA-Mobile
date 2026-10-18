@@ -9,12 +9,14 @@ Verificado em 18/10/2026. Testes locais usam arquivos sintéticos, sem distribui
 | APK real | Gerado no navegador com 50 MB: assinatura v2 aceita por apksigner, alinhamento de 16 KiB aceito por zipalign, tamanho e último byte da ROM preservados. |
 | Fluxo web | Seleção, nome/logo, cancelamento, nova geração, download e aviso para ROM maior que 32 MiB. Layouts desktop, celular e tema claro inspecionados. |
 | Privacidade | Tráfego observado na geração: somente leitura de assets/bases; nenhum envio da ROM ou chave. Auditoria da pasta pública aprovada. |
+| Windows offline | Runner Windows 2022: geração offline, download, reinício e persistência de chave aprovados no desenvolvimento e no executável empacotado. EXE portátil publicado. |
+| Site público | Geração/download de APK, backup/restauração pela interface, backup inválido, nome com acentos, logo automática e tema móvel aprovados. Sem erro JavaScript ou requisição com corpo; APK público validado por apksigner/zipalign. |
 | Linux offline | AppImage compilado e extraído; runtime empacotado gerou e baixou APK sem rede, reiniciou e preservou a identidade de assinatura. |
 | Segurança desktop | Protocolo rejeita origem/caminhos inválidos; renderer isolado sem Node e com sandbox. Teste automatizado aprovado. |
 | Dependências | Auditorias npm de produção sem vulnerabilidades altas/críticas. |
 | Visual | Revisão final de impeccable: SHIP, sem problemas materiais. |
 
-A publicação testa novamente em runners limpos. O workflow de release verifica o Windows em Windows 2022 e o Linux em Ubuntu 24.04, incluindo o runtime empacotado. Consulte as [execuções do projeto](https://github.com/WillianBr08/PortGBA-Mobile/actions) para o resultado da distribuição publicada.
+Publicação em runners limpos aprovada: [Pages](https://github.com/WillianBr08/PortGBA-Mobile/actions/runs/39101759674) e [release Linux/Windows](https://github.com/WillianBr08/PortGBA-Mobile/actions/runs/39101760449). A [release v1.1.0](https://github.com/WillianBr08/PortGBA-Mobile/releases/tag/v1.1.0) contém os dois pacotes e os hashes SHA-256.
 
 ## Limites conhecidos
 

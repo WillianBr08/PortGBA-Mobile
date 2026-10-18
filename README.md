@@ -35,7 +35,7 @@ Os pacotes já incluem as bases Android e funcionam sem internet. No Linux, use 
 
 ## Guarde a chave, preserve seu progresso
 
-Na primeira geração, uma chave local é criada para assinar seus APKs. Use **Exportar chave** e guarde o backup: ele contém a chave privada sem senha. Para usar a mesma identidade em outro navegador ou no aplicativo desktop, restaure esse backup.
+Na primeira geração, uma chave local é criada para assinar seus APKs. Use **Exportar backup** e guarde o backup: ele contém a chave privada sem senha. Para usar a mesma identidade em outro navegador ou no aplicativo desktop, restaure esse backup.
 
 A mesma ROM e a mesma chave permitem atualizar o aplicativo, inclusive após mudar nome ou logo. Alterar a ROM muda seu identificador. Limpar dados do navegador, mudar de perfil ou usar outra chave pode impedir atualizar por cima. Exporte seus saves antes de desinstalar.
 
