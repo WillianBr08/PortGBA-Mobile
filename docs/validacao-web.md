@@ -19,4 +19,8 @@ Executada em 17/10/2026 (America/Bahia). Artefatos de teste ficam em `output/pla
 
 Não foram testados aparelhos físicos ARM, um sistema Android com páginas reais de 16 KiB, Safari ou Firefox. A campanha completa do Quetzal não foi jogada. O menu de importação e o seletor Android foram abertos; a rodada atual de automação não concluiu a seleção do arquivo. Salvar e carregar estados automáticos foram efetivamente verificados. A implementação Android de importação é a mesma já existente.
 
-O workflow foi validado localmente quanto à sintaxe e às etapas de compilação, montagem, assinatura e auditoria. Ainda não foi executado no GitHub: falta definir o repositório remoto e habilitar Pages. Publicação permanece condicionada à variável `GBA_STUDIO_PUBLISH=true`.
+O conteúdo versionado foi extraído em uma pasta limpa e recompilado nas três arquiteturas em 18/10/2026. Preparação sem chave/ROM, instalação das dependências, testes, build web e auditoria também passaram nessa cópia. O projeto foi enviado a [WillianBr08/PortGBA-Mobile](https://github.com/WillianBr08/PortGBA-Mobile), preservando o commit inicial. GitHub Pages usa a origem workflow e a variável `GBA_STUDIO_PUBLISH=true`.
+
+A etapa atual é SHIP: a execução remota e o deploy são acompanhados em [Actions](https://github.com/WillianBr08/PortGBA-Mobile/actions/workflows/pages.yml). A publicação só é considerada confirmada após workflow bem-sucedido, resposta HTTP 200 e geração de APK no endereço público `https://willianbr08.github.io/PortGBA-Mobile/`.
+
+Para interromper novas publicações, defina `GBA_STUDIO_PUBLISH=false`; isso preserva a versão já publicada. Para reverter uma atualização, reverta o commit problemático em main e execute o workflow. Na primeira publicação, se for necessário retirar o site, use Settings → Pages → Unpublish site. Não acrescente telemetria que possa enviar ROMs ou chaves; a verificação pública usa status HTTP, logs do Actions e o fluxo de geração no navegador.
