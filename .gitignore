@@ -29,3 +29,15 @@ node_modules/
 /desktop/site/
 *.AppImage
 *.exe
+
+# Local development notes and assistant tooling
+/.agent-context/
+/.impeccable/
+/.codex/
+/.claude/
+/AGENTS.md
+/CLAUDE.md
+/DESIGN.md
+/PRODUCT.md
+/docs/spec.md
+/docs/plan.md

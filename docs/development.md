@@ -54,4 +54,4 @@ O teste smoke também produz um APK adulterado, que deve falhar na verificação
 
 `pages.yml` testa e publica após push na branch principal, quando `GBA_STUDIO_PUBLISH=true`. Pull requests validam sem publicar. `release.yml` prepara as bases e testa os runtimes Linux/Windows em seus sistemas nativos antes de publicar os artefatos de uma tag `v*`. Execução manual compila sem criar release.
 
-Nunca versione `.private/`, ROMs, saves, chaves, `node_modules/`, `build/` ou `dist/`. Para exportar fontes: `python3 tools/empacotar_projeto.py` usa os arquivos rastreados pelo Git. Consulte `docs/plan.md` antes de retomar uma entrega. Para rollback, reverta o commit na branch principal e publique novamente; uma versão anterior permanece no histórico de releases.
+Nunca versione `.private/`, ROMs, saves, chaves, `node_modules/`, `build/` ou `dist/`. Para exportar fontes: `python3 tools/empacotar_projeto.py` usa os arquivos rastreados pelo Git. Para rollback, reverta o commit na branch principal e publique novamente; uma versão anterior permanece no histórico de releases.

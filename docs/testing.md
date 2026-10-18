@@ -14,7 +14,6 @@ Verificado em 18/10/2026. Testes locais usam arquivos sintéticos, sem distribui
 | Linux offline | AppImage compilado e extraído; runtime empacotado gerou e baixou APK sem rede, reiniciou e preservou a identidade de assinatura. |
 | Segurança desktop | Protocolo rejeita origem/caminhos inválidos; renderer isolado sem Node e com sandbox. Teste automatizado aprovado. |
 | Dependências | Auditorias npm de produção sem vulnerabilidades altas/críticas. |
-| Visual | Revisão final de impeccable: SHIP, sem problemas materiais. |
 
 Publicação em runners limpos aprovada: [Pages](https://github.com/WillianBr08/PortGBA-Mobile/actions/runs/39101759674) e [release Linux/Windows](https://github.com/WillianBr08/PortGBA-Mobile/actions/runs/39101760449). A [release v1.1.0](https://github.com/WillianBr08/PortGBA-Mobile/releases/tag/v1.1.0) contém os dois pacotes e os hashes SHA-256.
 

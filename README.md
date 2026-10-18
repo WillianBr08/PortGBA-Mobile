@@ -58,7 +58,7 @@ O núcleo mGBA é obtido por commit fixado durante o build em `build/mgba/`; dep
 
 ## Desenvolvimento e publicação
 
-Consulte [como compilar e testar](docs/development.md), [validações e limites](docs/testing.md) e [escopo da entrega](docs/spec.md).
+Consulte [como compilar e testar](docs/development.md) e [validações e limites](docs/testing.md).
 
 O GitHub Actions prepara bases sem ROM, verifica os APKs e publica o site no Pages. Tags `v*` também compilam e testam os pacotes Linux/Windows e publicam uma release com SHA-256. A variável `GBA_STUDIO_PUBLISH=true` habilita o deploy do Pages; a origem deve ser **GitHub Actions** em Settings → Pages.
 
