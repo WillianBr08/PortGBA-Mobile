@@ -9,9 +9,12 @@ BT="$SDK/build-tools/35.0.0"
 PLATFORM="$SDK/platforms/android-36/android.jar"
 export JAVA_HOME="$JDK" PATH="$JDK/bin:$PATH"
 test -f "$NDK/build/cmake/android.toolchain.cmake" || { echo 'Defina ANDROID_NDK_HOME para o NDK r27c ou posterior.'; exit 1; }
+python3 tools/prepare_core.py
 mkdir -p build/{classes,dex,res,apk/lib} dist .private
 for ABI in ${ELITE_ABIS:-arm64-v8a armeabi-v7a x86_64}; do
     cmake -S . -B "build/native-$ABI" -G Ninja \
+        -DMGBA_SOURCE_DIR="$PWD/build/mgba" \
+        -DELITE_ENGINE_SOURCE="$PWD/android/app/src/main/cpp/engine.c" \
         -DCMAKE_TOOLCHAIN_FILE="$NDK/build/cmake/android.toolchain.cmake" \
         -DANDROID_ABI="$ABI" -DANDROID_PLATFORM=android-26 -DCMAKE_BUILD_TYPE=Release \
         -DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON > "build/config-$ABI.log" 2>&1
@@ -21,10 +24,10 @@ for ABI in ${ELITE_ABIS:-arm64-v8a armeabi-v7a x86_64}; do
     "$NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip" --strip-unneeded "build/apk/lib/$ABI/libeliteredux.so"
 done
 rm -f build/res/resources.zip
-"$BT/aapt2" compile --dir app/src/main/res -o build/res/resources.zip
-"$BT/aapt2" link -I "$PLATFORM" --manifest app/src/main/AndroidManifest.xml \
+"$BT/aapt2" compile --dir android/app/src/main/res -o build/res/resources.zip
+"$BT/aapt2" link -I "$PLATFORM" --manifest android/app/src/main/AndroidManifest.xml \
     --java build/generated --auto-add-overlay -o build/base.apk build/res/resources.zip
-rg --files app/src/main/java -g '*.java' > build/sources.txt
+rg --files android/app/src/main/java -g '*.java' > build/sources.txt
 rm -rf build/classes
 mkdir -p build/classes
 "$JDK/bin/javac" -encoding UTF-8 --release 8 -classpath "$PLATFORM" -d build/classes @build/sources.txt
@@ -43,7 +46,7 @@ fi
 python3 - <<'ROMCHECK'
 from pathlib import Path
 import json
-root=Path('app/src/main/assets')
+root=Path('android/app/src/main/assets')
 if not (root/'game.json').is_file():raise SystemExit('Use ./portar-gba.sh /caminho/Jogo.gba para criar um APK com sua ROM.')
 spec=json.loads((root/'game.json').read_text())
 if not (root/'game'/(spec['base']+'.gba')).is_file():raise SystemExit('ROM ausente. Use ./portar-gba.sh /caminho/Jogo.gba')
@@ -51,7 +54,7 @@ ROMCHECK
 cp build/dex/classes.dex build/apk/
 rm -rf build/apk/assets
 mkdir -p build/apk/assets
-cp -a app/src/main/assets/. build/apk/assets/
+cp -a android/app/src/main/assets/. build/apk/assets/
 cp build/base.apk build/unsigned.apk
 python3 - <<'PY'
 from pathlib import Path

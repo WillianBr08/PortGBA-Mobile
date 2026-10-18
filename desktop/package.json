@@ -1,0 +1,59 @@
+{
+  "name": "gba-studio-desktop",
+  "productName": "GBA Studio",
+  "version": "1.1.0",
+  "description": "Gere APKs de suas ROMs GBA, offline e sem SDK Android.",
+  "author": "WillianBr08",
+  "license": "MIT",
+  "private": true,
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test test/*.test.cjs",
+    "dist:linux": "electron-builder --linux AppImage --x64 --publish never",
+    "dist:windows": "electron-builder --win portable --x64 --publish never",
+    "test:app": "node test/electron-smoke.cjs"
+  },
+  "devDependencies": {
+    "electron": "44.9.0",
+    "electron-builder": "26.15.3",
+    "playwright-core": "1.64.1"
+  },
+  "build": {
+    "appId": "dev.gba.studio.desktop",
+    "directories": {
+      "output": "../dist/desktop",
+      "buildResources": "assets"
+    },
+    "files": [
+      "main.cjs",
+      "protocol.cjs",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../web/site",
+        "to": "site",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "artifactName": "GBA-Studio-${os}-${arch}.${ext}",
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility",
+      "icon": "assets/icon.png",
+      "artifactName": "GBA-Studio-linux-x64.AppImage",
+      "executableName": "gba-studio"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "assets/icon.ico",
+      "signAndEditExecutable": false
+    },
+    "portable": {
+      "artifactName": "GBA-Studio-win-x64.exe"
+    }
+  }
+}

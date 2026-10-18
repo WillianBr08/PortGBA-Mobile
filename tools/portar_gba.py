@@ -26,9 +26,9 @@ def slug(text):
 def inspect_rom(path):
     path = Path(path).expanduser().resolve()
     if not path.is_file(): raise ValueError('Escolha um arquivo .gba existente.')
+    if path.suffix.lower() != '.gba' or not 192 <= path.stat().st_size <= 50_000_000:
+        raise ValueError('Use uma ROM GBA descompactada de até 50 MB.')
     data = path.read_bytes()
-    if path.suffix.lower() != '.gba' or not 192 <= len(data) <= 32 * 1024 * 1024:
-        raise ValueError('Use uma ROM GBA descompactada, entre 192 bytes e 32 MiB.')
     if data[0xB2] != 0x96: raise ValueError('O arquivo não tem um cabeçalho GBA reconhecível.')
     return path, data, hashlib.sha256(data).hexdigest()
 
@@ -93,7 +93,7 @@ def make_port(rom, title=None, output=None, save=None, states=None, package=None
     log('Aplicativo independente: '+package)
     with tempfile.TemporaryDirectory(prefix='gba-port-',dir=destination) as tmp_name:
         tmp=Path(tmp_name)
-        tree=ET.parse(ROOT/'app/src/main/AndroidManifest.xml');manifest=tree.getroot();manifest.set('package',package)
+        tree=ET.parse(ROOT/'android/app/src/main/AndroidManifest.xml');manifest=tree.getroot();manifest.set('package',package)
         app=manifest.find('application');app.set(ANDROID+'label',title);app.set(ANDROID+'icon','@drawable/icon_'+logo)
         manifest_path=tmp/'AndroidManifest.xml';tree.write(manifest_path,encoding='utf-8',xml_declaration=True)
         unsigned=tmp/'unsigned.apk'
@@ -102,8 +102,8 @@ def make_port(rom, title=None, output=None, save=None, states=None, package=None
             apk.write(cache/'dex/classes.dex','classes.dex',compress_type=ZIP_DEFLATED)
             for lib in libraries: apk.write(lib,'lib/'+str(lib.relative_to(cache/'apk/lib')),compress_type=ZIP_STORED)
             for folder in ['fonts','licenses']:
-                for p in sorted((ROOT/'app/src/main/assets'/folder).rglob('*')):
-                    if p.is_file():apk.write(p,'assets/'+str(p.relative_to(ROOT/'app/src/main/assets')),compress_type=ZIP_DEFLATED)
+                for p in sorted((ROOT/'android/app/src/main/assets'/folder).rglob('*')):
+                    if p.is_file():apk.write(p,'assets/'+str(p.relative_to(ROOT/'android/app/src/main/assets')),compress_type=ZIP_DEFLATED)
             spec={'title':title,'base':base,'folder':title.replace('/','_').replace('\\','_'),
                   'description':'Game Boy Advance','rom_sha256':digest,'icon':logo}
             apk.writestr('assets/game.json',json.dumps(spec,ensure_ascii=False),compress_type=ZIP_DEFLATED)

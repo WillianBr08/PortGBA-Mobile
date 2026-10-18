@@ -2,11 +2,13 @@ name: Build Android bases and Pages
 on:
   push:
     branches: [main, master]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   build:
@@ -57,7 +59,7 @@ jobs:
         with:
           path: web/site
   deploy:
-    if: vars.GBA_STUDIO_PUBLISH == 'true'
+    if: vars.GBA_STUDIO_PUBLISH == 'true' && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-24.04
     permissions:

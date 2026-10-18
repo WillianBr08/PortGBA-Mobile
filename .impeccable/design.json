@@ -1,211 +1,332 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-18T01:53:26.412908+00:00",
+  "generatedAt": "2026-10-18T05:43:56.660747+00:00",
   "title": "Design System: GBA Studio",
   "extensions": {
     "colorMeta": {
-      "paper": {
+      "canvas": {
         "role": "neutral",
-        "displayName": "paper",
+        "displayName": "Canvas",
         "tonalRamp": [
-          "oklch(15% 0.0051 228.82)",
-          "oklch(26% 0.0051 228.82)",
-          "oklch(38% 0.0051 228.82)",
-          "oklch(49% 0.0051 228.82)",
-          "oklch(61% 0.0051 228.82)",
-          "oklch(72% 0.0051 228.82)",
-          "oklch(84% 0.0051 228.82)",
-          "oklch(95% 0.0051 228.82)"
+          "oklch(15% 0.0596 288.89)",
+          "oklch(26% 0.0596 288.89)",
+          "oklch(38% 0.0596 288.89)",
+          "oklch(49% 0.0596 288.89)",
+          "oklch(61% 0.0596 288.89)",
+          "oklch(72% 0.0596 288.89)",
+          "oklch(84% 0.0596 288.89)",
+          "oklch(95% 0.0596 288.89)"
         ]
       },
-      "white": {
+      "foreground": {
         "role": "neutral",
-        "displayName": "white",
+        "displayName": "Foreground",
         "tonalRamp": [
-          "oklch(15% 0.0000 89.88)",
-          "oklch(26% 0.0000 89.88)",
-          "oklch(38% 0.0000 89.88)",
-          "oklch(49% 0.0000 89.88)",
-          "oklch(61% 0.0000 89.88)",
-          "oklch(72% 0.0000 89.88)",
-          "oklch(84% 0.0000 89.88)",
-          "oklch(95% 0.0000 89.88)"
+          "oklch(15% 0.0069 304.24)",
+          "oklch(26% 0.0069 304.24)",
+          "oklch(38% 0.0069 304.24)",
+          "oklch(49% 0.0069 304.24)",
+          "oklch(61% 0.0069 304.24)",
+          "oklch(72% 0.0069 304.24)",
+          "oklch(84% 0.0069 304.24)",
+          "oklch(95% 0.0069 304.24)"
+        ]
+      },
+      "secondary": {
+        "role": "neutral",
+        "displayName": "Secondary",
+        "tonalRamp": [
+          "oklch(15% 0.0421 294.63)",
+          "oklch(26% 0.0421 294.63)",
+          "oklch(38% 0.0421 294.63)",
+          "oklch(49% 0.0421 294.63)",
+          "oklch(61% 0.0421 294.63)",
+          "oklch(72% 0.0421 294.63)",
+          "oklch(84% 0.0421 294.63)",
+          "oklch(95% 0.0421 294.63)"
+        ]
+      },
+      "divider": {
+        "role": "neutral",
+        "displayName": "Divider",
+        "tonalRamp": [
+          "oklch(15% 0.0593 292.63)",
+          "oklch(26% 0.0593 292.63)",
+          "oklch(38% 0.0593 292.63)",
+          "oklch(49% 0.0593 292.63)",
+          "oklch(61% 0.0593 292.63)",
+          "oklch(72% 0.0593 292.63)",
+          "oklch(84% 0.0593 292.63)",
+          "oklch(95% 0.0593 292.63)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0021 17.19)",
+          "oklch(26% 0.0021 17.19)",
+          "oklch(38% 0.0021 17.19)",
+          "oklch(49% 0.0021 17.19)",
+          "oklch(61% 0.0021 17.19)",
+          "oklch(72% 0.0021 17.19)",
+          "oklch(84% 0.0021 17.19)",
+          "oklch(95% 0.0021 17.19)"
         ]
       },
       "ink": {
-        "role": "primary",
-        "displayName": "ink",
+        "role": "neutral",
+        "displayName": "Ink",
         "tonalRamp": [
-          "oklch(15% 0.0512 239.34)",
-          "oklch(26% 0.0512 239.34)",
-          "oklch(38% 0.0512 239.34)",
-          "oklch(49% 0.0512 239.34)",
-          "oklch(61% 0.0512 239.34)",
-          "oklch(72% 0.0512 239.34)",
-          "oklch(84% 0.0512 239.34)",
-          "oklch(95% 0.0512 239.34)"
+          "oklch(15% 0.0516 290.97)",
+          "oklch(26% 0.0516 290.97)",
+          "oklch(38% 0.0516 290.97)",
+          "oklch(49% 0.0516 290.97)",
+          "oklch(61% 0.0516 290.97)",
+          "oklch(72% 0.0516 290.97)",
+          "oklch(84% 0.0516 290.97)",
+          "oklch(95% 0.0516 290.97)"
         ]
       },
       "muted": {
         "role": "neutral",
-        "displayName": "muted",
+        "displayName": "Muted",
         "tonalRamp": [
-          "oklch(15% 0.0367 237.10)",
-          "oklch(26% 0.0367 237.10)",
-          "oklch(38% 0.0367 237.10)",
-          "oklch(49% 0.0367 237.10)",
-          "oklch(61% 0.0367 237.10)",
-          "oklch(72% 0.0367 237.10)",
-          "oklch(84% 0.0367 237.10)",
-          "oklch(95% 0.0367 237.10)"
+          "oklch(15% 0.0412 295.48)",
+          "oklch(26% 0.0412 295.48)",
+          "oklch(38% 0.0412 295.48)",
+          "oklch(49% 0.0412 295.48)",
+          "oklch(61% 0.0412 295.48)",
+          "oklch(72% 0.0412 295.48)",
+          "oklch(84% 0.0412 295.48)",
+          "oklch(95% 0.0412 295.48)"
         ]
       },
       "line": {
         "role": "neutral",
-        "displayName": "line",
+        "displayName": "Line",
         "tonalRamp": [
-          "oklch(15% 0.0181 234.55)",
-          "oklch(26% 0.0181 234.55)",
-          "oklch(38% 0.0181 234.55)",
-          "oklch(49% 0.0181 234.55)",
-          "oklch(61% 0.0181 234.55)",
-          "oklch(72% 0.0181 234.55)",
-          "oklch(84% 0.0181 234.55)",
-          "oklch(95% 0.0181 234.55)"
+          "oklch(15% 0.0223 300.17)",
+          "oklch(26% 0.0223 300.17)",
+          "oklch(38% 0.0223 300.17)",
+          "oklch(49% 0.0223 300.17)",
+          "oklch(61% 0.0223 300.17)",
+          "oklch(72% 0.0223 300.17)",
+          "oklch(84% 0.0223 300.17)",
+          "oklch(95% 0.0223 300.17)"
         ]
       },
-      "shell": {
+      "soft": {
         "role": "neutral",
-        "displayName": "shell",
+        "displayName": "Soft",
         "tonalRamp": [
-          "oklch(15% 0.0136 233.76)",
-          "oklch(26% 0.0136 233.76)",
-          "oklch(38% 0.0136 233.76)",
-          "oklch(49% 0.0136 233.76)",
-          "oklch(61% 0.0136 233.76)",
-          "oklch(72% 0.0136 233.76)",
-          "oklch(84% 0.0136 233.76)",
-          "oklch(95% 0.0136 233.76)"
+          "oklch(15% 0.0123 301.29)",
+          "oklch(26% 0.0123 301.29)",
+          "oklch(38% 0.0123 301.29)",
+          "oklch(49% 0.0123 301.29)",
+          "oklch(61% 0.0123 301.29)",
+          "oklch(72% 0.0123 301.29)",
+          "oklch(84% 0.0123 301.29)",
+          "oklch(95% 0.0123 301.29)"
         ]
       },
-      "accent": {
+      "indigo": {
         "role": "primary",
-        "displayName": "accent",
+        "displayName": "Indigo",
         "tonalRamp": [
-          "oklch(15% 0.0784 173.21)",
-          "oklch(26% 0.0784 173.21)",
-          "oklch(38% 0.0784 173.21)",
-          "oklch(49% 0.0784 173.21)",
-          "oklch(61% 0.0784 173.21)",
-          "oklch(72% 0.0784 173.21)",
-          "oklch(84% 0.0784 173.21)",
-          "oklch(95% 0.0784 173.21)"
+          "oklch(15% 0.1644 286.57)",
+          "oklch(26% 0.1644 286.57)",
+          "oklch(38% 0.1644 286.57)",
+          "oklch(49% 0.1644 286.57)",
+          "oklch(61% 0.1644 286.57)",
+          "oklch(72% 0.1644 286.57)",
+          "oklch(84% 0.1644 286.57)",
+          "oklch(95% 0.1644 286.57)"
+        ]
+      },
+      "indigo-hover": {
+        "role": "primary",
+        "displayName": "Indigo hover",
+        "tonalRamp": [
+          "oklch(15% 0.1537 285.37)",
+          "oklch(26% 0.1537 285.37)",
+          "oklch(38% 0.1537 285.37)",
+          "oklch(49% 0.1537 285.37)",
+          "oklch(61% 0.1537 285.37)",
+          "oklch(72% 0.1537 285.37)",
+          "oklch(84% 0.1537 285.37)",
+          "oklch(95% 0.1537 285.37)"
+        ]
+      },
+      "yellow": {
+        "role": "secondary",
+        "displayName": "Yellow",
+        "tonalRamp": [
+          "oklch(15% 0.1090 81.67)",
+          "oklch(26% 0.1090 81.67)",
+          "oklch(38% 0.1090 81.67)",
+          "oklch(49% 0.1090 81.67)",
+          "oklch(61% 0.1090 81.67)",
+          "oklch(72% 0.1090 81.67)",
+          "oklch(84% 0.1090 81.67)",
+          "oklch(95% 0.1090 81.67)"
+        ]
+      },
+      "success": {
+        "role": "neutral",
+        "displayName": "Success",
+        "tonalRamp": [
+          "oklch(15% 0.0806 163.13)",
+          "oklch(26% 0.0806 163.13)",
+          "oklch(38% 0.0806 163.13)",
+          "oklch(49% 0.0806 163.13)",
+          "oklch(61% 0.0806 163.13)",
+          "oklch(72% 0.0806 163.13)",
+          "oklch(84% 0.0806 163.13)",
+          "oklch(95% 0.0806 163.13)"
         ]
       },
       "error": {
         "role": "neutral",
-        "displayName": "error",
+        "displayName": "Error",
         "tonalRamp": [
-          "oklch(15% 0.1494 21.61)",
-          "oklch(26% 0.1494 21.61)",
-          "oklch(38% 0.1494 21.61)",
-          "oklch(49% 0.1494 21.61)",
-          "oklch(61% 0.1494 21.61)",
-          "oklch(72% 0.1494 21.61)",
-          "oklch(84% 0.1494 21.61)",
-          "oklch(95% 0.1494 21.61)"
+          "oklch(15% 0.1351 17.71)",
+          "oklch(26% 0.1351 17.71)",
+          "oklch(38% 0.1351 17.71)",
+          "oklch(49% 0.1351 17.71)",
+          "oklch(61% 0.1351 17.71)",
+          "oklch(72% 0.1351 17.71)",
+          "oklch(84% 0.1351 17.71)",
+          "oklch(95% 0.1351 17.71)"
         ]
       },
-      "gold": {
-        "role": "secondary",
-        "displayName": "gold",
-        "tonalRamp": [
-          "oklch(15% 0.0786 87.51)",
-          "oklch(26% 0.0786 87.51)",
-          "oklch(38% 0.0786 87.51)",
-          "oklch(49% 0.0786 87.51)",
-          "oklch(61% 0.0786 87.51)",
-          "oklch(72% 0.0786 87.51)",
-          "oklch(84% 0.0786 87.51)",
-          "oklch(95% 0.0786 87.51)"
-        ]
-      },
-      "dragging": {
+      "device": {
         "role": "neutral",
-        "displayName": "dragging",
+        "displayName": "Device",
         "tonalRamp": [
-          "oklch(15% 0.0348 165.88)",
-          "oklch(26% 0.0348 165.88)",
-          "oklch(38% 0.0348 165.88)",
-          "oklch(49% 0.0348 165.88)",
-          "oklch(61% 0.0348 165.88)",
-          "oklch(72% 0.0348 165.88)",
-          "oklch(84% 0.0348 165.88)",
-          "oklch(95% 0.0348 165.88)"
+          "oklch(15% 0.1381 292.22)",
+          "oklch(26% 0.1381 292.22)",
+          "oklch(38% 0.1381 292.22)",
+          "oklch(49% 0.1381 292.22)",
+          "oklch(61% 0.1381 292.22)",
+          "oklch(72% 0.1381 292.22)",
+          "oklch(84% 0.1381 292.22)",
+          "oklch(95% 0.1381 292.22)"
         ]
       },
-      "label-hover": {
+      "device-edge": {
         "role": "neutral",
-        "displayName": "label-hover",
+        "displayName": "Device edge",
         "tonalRamp": [
-          "oklch(15% 0.0034 174.49)",
-          "oklch(26% 0.0034 174.49)",
-          "oklch(38% 0.0034 174.49)",
-          "oklch(49% 0.0034 174.49)",
-          "oklch(61% 0.0034 174.49)",
-          "oklch(72% 0.0034 174.49)",
-          "oklch(84% 0.0034 174.49)",
-          "oklch(95% 0.0034 174.49)"
+          "oklch(15% 0.1285 291.27)",
+          "oklch(26% 0.1285 291.27)",
+          "oklch(38% 0.1285 291.27)",
+          "oklch(49% 0.1285 291.27)",
+          "oklch(61% 0.1285 291.27)",
+          "oklch(72% 0.1285 291.27)",
+          "oklch(84% 0.1285 291.27)",
+          "oklch(95% 0.1285 291.27)"
+        ]
+      },
+      "light-canvas": {
+        "role": "neutral",
+        "displayName": "Light canvas",
+        "tonalRamp": [
+          "oklch(15% 0.0218 297.41)",
+          "oklch(26% 0.0218 297.41)",
+          "oklch(38% 0.0218 297.41)",
+          "oklch(49% 0.0218 297.41)",
+          "oklch(61% 0.0218 297.41)",
+          "oklch(72% 0.0218 297.41)",
+          "oklch(84% 0.0218 297.41)",
+          "oklch(95% 0.0218 297.41)"
+        ]
+      },
+      "light-secondary": {
+        "role": "neutral",
+        "displayName": "Light secondary",
+        "tonalRamp": [
+          "oklch(15% 0.0623 295.82)",
+          "oklch(26% 0.0623 295.82)",
+          "oklch(38% 0.0623 295.82)",
+          "oklch(49% 0.0623 295.82)",
+          "oklch(61% 0.0623 295.82)",
+          "oklch(72% 0.0623 295.82)",
+          "oklch(84% 0.0623 295.82)",
+          "oklch(95% 0.0623 295.82)"
+        ]
+      },
+      "light-divider": {
+        "role": "neutral",
+        "displayName": "Light divider",
+        "tonalRamp": [
+          "oklch(15% 0.0415 301.19)",
+          "oklch(26% 0.0415 301.19)",
+          "oklch(38% 0.0415 301.19)",
+          "oklch(49% 0.0415 301.19)",
+          "oklch(61% 0.0415 301.19)",
+          "oklch(72% 0.0415 301.19)",
+          "oklch(84% 0.0415 301.19)",
+          "oklch(95% 0.0415 301.19)"
         ]
       }
     },
-    "typographyMeta": {
-      "display": {
-        "displayName": "Título principal",
-        "purpose": "Introdução da superfície."
+    "shadows": [
+      {
+        "name": "generator-panel",
+        "value": "0 24px 60px #120c292b",
+        "purpose": "Elevação do formulário."
       },
-      "body": {
-        "displayName": "Texto corrente",
-        "purpose": "Leitura e instruções."
+      {
+        "name": "console",
+        "value": "0 12px 0 var(--device-edge), 0 34px 45px #110d2e66",
+        "purpose": "Volume do console."
       }
-    },
-    "shadows": [],
+    ],
     "motion": [
       {
-        "name": "action-hover",
-        "value": "background .16s ease",
-        "purpose": "Hover da ação principal e download."
+        "name": "upload-state",
+        "value": "background .2s cubic-bezier(0.2, 0.8, 0.2, 1), border-color .2s",
+        "purpose": "Hover e arraste da ROM."
       },
       {
-        "name": "cartridge-state",
-        "value": "background .2s ease",
-        "purpose": "Mudança do casco ao arrastar."
+        "name": "primary-state",
+        "value": "background .18s, transform .15s",
+        "purpose": "Hover e pressão de ações."
       }
     ],
     "breakpoints": [
       {
-        "name": "compact",
-        "value": "760px"
+        "name": "intermediate",
+        "value": "1000px"
+      },
+      {
+        "name": "mobile",
+        "value": "720px"
       }
     ],
     "focus": {
-      "value": "3px solid var(--accent)",
+      "value": "3px solid var(--focus)",
       "offset": "5px",
+      "panelColor": "var(--indigo)",
+      "dropZoneOffset": "4px",
       "restoreOffset": "3px"
     },
     "evidence": {
       "sources": [
         "web/src/style.css",
-        "web/index.html"
+        "web/index.html",
+        "PRODUCT.md"
       ],
       "screenshots": [
-        "output/playwright/desktop-final.png",
-        "output/playwright/mobile-final.png"
+        "output/playwright/studio-desktop-final.png",
+        "output/playwright/studio-mobile-final.png",
+        "output/playwright/studio-light-settled.png"
       ],
       "approvedComp": false,
-      "reviewVerdict": "ship; nenhum bloqueio material informado",
-      "tonalRamps": "Sintetizadas em OKLCH para visualização; não são tokens implementados.",
-      "browserThemeColor": "#25485e"
+      "reviewVerdict": "ship; nenhum bloqueio material informado pelo revisor",
+      "tonalRamps": "Sintetizadas para o painel; não são tokens implementados.",
+      "scope": "Extração documental; nenhuma nova execução de testes ou auditoria de acessibilidade nesta etapa."
     }
   },
   "components": [
@@ -214,71 +335,68 @@
       "kind": "button",
       "refersTo": "button-primary",
       "description": "Ação principal de geração.",
-      "html": "<button class=\"ds-primary\">Gerar APK <span>→</span></button>",
-      "css": ".ds-primary{font-family:var(--font);display:flex;justify-content:space-between;align-items:center;width:100%;padding:15px 20px;background:var(--ink);color:var(--white);border:0;border-radius:6px;font-size:18px;font-weight:700;cursor:pointer;transition:background .16s ease}.ds-primary:hover{background:var(--accent)}.ds-primary:focus-visible{outline:3px solid var(--accent);outline-offset:5px}.ds-primary:disabled{opacity:.5;cursor:default}.ds-primary:disabled:hover{background:var(--ink)} @media(prefers-reduced-motion:reduce){*{transition:none!important}}"
+      "html": "<button class=\"ds-primary\" type=\"button\">Gerar APK<svg width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-primary{font-family:var(--body-font);display:flex;align-items:center;justify-content:space-between;width:100%;min-height:54px;padding:14px 20px;border:0;border-radius:8px;font-size:16px;font-weight:700;text-decoration:none;cursor:pointer;background:var(--indigo);color:#fff;transition:background .18s,transform .15s}.ds-primary:hover{background:var(--indigo-hover)}.ds-primary:active{transform:translateY(1px)}.ds-primary:focus-visible{outline:3px solid var(--indigo);outline-offset:5px}.ds-primary:disabled{background:#8e84ae;opacity:.5;cursor:default}@media(prefers-reduced-motion:reduce){*{transition:none!important}}"
     },
     {
       "name": "Baixar APK",
       "kind": "button",
       "refersTo": "button-download",
-      "description": "Download após a geração.",
-      "html": "<a class=\"ds-download\" href=\"#\">Baixar APK <span>↓</span></a>",
-      "css": ".ds-download{font-family:var(--font);display:flex;justify-content:space-between;background:var(--accent);color:var(--white);padding:15px 20px;border-radius:6px;font-size:18px;font-weight:700;text-decoration:none;transition:background .16s ease}.ds-download:hover{background:var(--accent)}.ds-download:focus-visible{outline:3px solid var(--accent);outline-offset:5px} @media(prefers-reduced-motion:reduce){*{transition:none!important}}"
+      "description": "Download após geração.",
+      "html": "<a class=\"ds-download\" href=\"#\">Baixar APK<svg width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-download{font-family:var(--body-font);display:flex;align-items:center;justify-content:space-between;width:100%;min-height:54px;padding:14px 20px;border:0;border-radius:8px;font-size:16px;font-weight:700;text-decoration:none;cursor:pointer;background:var(--success);color:#fff;transition:background .18s,transform .15s}.ds-download:hover{background:var(--success)}.ds-download:active{transform:translateY(1px)}.ds-download:focus-visible{outline:3px solid var(--indigo);outline-offset:5px}@media(prefers-reduced-motion:reduce){*{transition:none!important}}"
     },
     {
       "name": "Exportar backup",
       "kind": "button",
       "refersTo": "button-secondary",
       "description": "Ação secundária da chave.",
-      "html": "<button class=\"ds-secondary\">Exportar backup</button>",
-      "css": ".ds-secondary{font-family:var(--font);color:var(--ink);border:1px solid var(--line);border-radius:6px;background:transparent;min-height:44px;padding:10px 14px;font-size:14px;cursor:pointer}.ds-secondary:hover{background:var(--shell)}.ds-secondary:focus-visible{outline:3px solid var(--accent);outline-offset:5px} @media(prefers-reduced-motion:reduce){*{transition:none!important}}"
+      "html": "<button class=\"ds-outline\" type=\"button\">Exportar backup</button>",
+      "css": ".ds-outline{font-family:var(--body-font);min-height:44px;border:1px solid var(--divider);border-radius:7px;padding:10px 12px;font-size:12px;background:transparent;color:var(--foreground);cursor:pointer}.ds-outline:hover{background:var(--divider)}.ds-outline:focus-visible{outline:3px solid var(--focus);outline-offset:5px}.ds-outline:active{transform:translateY(1px)}@media(prefers-reduced-motion:reduce){*{transition:none!important}}"
     },
     {
-      "name": "Nome no celular",
+      "name": "Nome no Android",
       "kind": "input",
       "refersTo": "input",
-      "description": "Campo opcional de nome.",
-      "html": "<label class=\"ds-label\" for=\"ds-title\">Nome no celular</label><input class=\"ds-input\" id=\"ds-title\" placeholder=\"O nome da sua ROM\">",
-      "css": ".ds-label{font-family:var(--font);display:block;margin-bottom:8px;color:var(--ink);font-size:16px;font-weight:700}.ds-input{font-family:var(--font);box-sizing:border-box;color:var(--ink);width:100%;min-height:50px;border:1px solid var(--line);border-radius:6px;padding:12px 14px;background:var(--white);font-size:16px;caret-color:var(--accent)}.ds-input::placeholder{color:var(--muted);opacity:1}.ds-input:focus-visible{outline:3px solid var(--accent);outline-offset:5px} @media(prefers-reduced-motion:reduce){*{transition:none!important}}"
+      "description": "Campo opcional do nome.",
+      "html": "<label class=\"ds-label\" for=\"ds-title\">Nome no Android</label><input class=\"ds-input\" id=\"ds-title\" placeholder=\"O nome do seu jogo\">",
+      "css": ".ds-label{font-family:var(--body-font);display:block;color:var(--ink);font-size:13px;font-weight:700;margin-bottom:9px}.ds-input{font-family:var(--body-font);box-sizing:border-box;width:100%;height:48px;padding:11px 12px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:7px;font-size:15px;caret-color:var(--indigo)}.ds-input::placeholder{color:var(--muted);opacity:1}.ds-input:focus-visible{outline:3px solid var(--indigo);outline-offset:5px}@media(prefers-reduced-motion:reduce){*{transition:none!important}}"
     },
     {
-      "name": "Cartucho de ROM",
-      "kind": "custom",
-      "refersTo": "cartridge",
-      "description": "Área de seleção do arquivo com assinatura material.",
-      "html": "<div class=\"ds-cartridge\"><div class=\"ds-top\">GAME BOY ADVANCE</div><label class=\"ds-rom\" for=\"ds-rom-file\"><svg width=\"29\" height=\"29\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M7 3h7l5 5v13H5V3h2Z\"/><path d=\"M14 3v6h5M8 14h8m-8 4h5\"/></svg><strong>Escolher sua ROM</strong><span>Clique ou arraste um arquivo .gba · até 32 MiB</span></label><input id=\"ds-rom-file\" type=\"file\" accept=\".gba\"><div class=\"ds-pins\"></div></div>",
-      "css": ".ds-cartridge{font-family:var(--font);position:relative;background:var(--shell);color:var(--ink);border-radius:12px 12px 26px 12px;padding:16px 18px 0;transition:background .2s ease}.ds-top{font-size:11px;letter-spacing:.12em;font-weight:700;margin-bottom:14px}.ds-rom{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:168px;padding:20px;background:var(--white);border-radius:6px;cursor:pointer}.ds-rom strong{font-size:21px;line-height:1.25}.ds-rom span{font-size:13px;color:var(--muted);margin-top:7px}.ds-cartridge:hover .ds-rom{background:#f9fcfb}.ds-cartridge:focus-within{outline:3px solid var(--accent);outline-offset:5px}.ds-cartridge input{position:absolute;inset:42px 18px 22px;width:calc(100% - 36px);height:calc(100% - 64px);opacity:0;cursor:pointer}.ds-pins{height:19px;width:42%;margin:17px auto 0;background:repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 6px,var(--shell) 6px,var(--shell) 10px)} @media(prefers-reduced-motion:reduce){*{transition:none!important}}"
+      "name": "Navegação",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Links do cabeçalho com tema de entorno.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Navegação de exemplo\"><a href=\"#downloads\">Baixar para PC</a><a href=\"https://github.com/WillianBr08/PortGBA-Mobile\">GitHub</a></nav>",
+      "css": ".ds-nav{font-family:var(--body-font);display:flex;gap:28px}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;text-decoration:none;color:var(--secondary)}.ds-nav a:hover{color:var(--foreground)}.ds-nav a:focus-visible{outline:3px solid var(--focus);outline-offset:5px}@media(prefers-reduced-motion:reduce){*{transition:none!important}}"
+    },
+    {
+      "name": "Painel do gerador",
+      "kind": "card",
+      "refersTo": "generator-panel",
+      "description": "Superfície clara sobre o entorno índigo.",
+      "html": "<section class=\"ds-panel\"><h2>Vamos criar seu APK?</h2><p>Uma ROM. Alguns segundos. Tudo pronto.</p></section>",
+      "css": ".ds-panel{font-family:var(--body-font);background:var(--surface);color:var(--ink);padding:32px;border-radius:16px;box-shadow:0 24px 60px #120c292b}.ds-panel h2{font-size:25px;line-height:1.2;letter-spacing:-.025em;margin:0 0 6px}.ds-panel p{font-size:14px;color:var(--muted);margin:0}@media(prefers-reduced-motion:reduce){*{transition:none!important}}"
     }
   ],
   "narrative": {
-    "northStar": "Operate",
-    "overview": "Operate: uma ferramenta de bancada que transforma a seleção da ROM em um gesto de inserir um cartucho. Prata azulada, tinta azul profunda e contatos dourados dão materialidade à interface; o verde marca processamento local, foco e conclusão.\n\nA composição é calma e direta, com tipografia Outfit local, superfícies planas e hierarquia clara entre instrução, formulário e ajuda. A identidade visível é GBA Studio, em português; PRODUCT.md continua sendo a autoridade de fatos do produto.",
+    "northStar": "Do cartucho ao Android",
+    "overview": "O GBA índigo orienta a identidade: fundo profundo, tipografia arredondada e um console geométrico com a prévia do aplicativo. A área branca concentra a tarefa de selecionar a ROM e gerar o APK.\n\nO tema claro troca o entorno por lavanda e conserva a superfície do formulário. O tom é próximo, em português; Outfit é local. PRODUCT.md é a autoridade para capacidades e limites do produto.",
     "keyCharacteristics": [
-      "Bancada clara com um cartucho como elemento de identidade.",
-      "Texto escuro e verde funcional sobre superfícies frias.",
-      "Densidade moderada, ajuda contextual e controles largos."
+      "Índigo e lavanda com amarelo pontual.",
+      "Formulário claro e controles largos.",
+      "Console geométrico como prévia no desktop."
     ],
-    "rules": [
-      {
-        "name": "The Functional Green Rule",
-        "body": "O verde identifica foco, processamento local, progresso e download; a ação de gerar começa na tinta escura.",
-        "section": "colors"
-      },
-      {
-        "name": "The Cartridge Rule",
-        "body": "A área de ROM concentra a metáfora física: casco, etiqueta clara e contatos; os demais campos permanecem controles simples.",
-        "section": "components"
-      }
-    ],
+    "rules": [],
     "dos": [
-      "Do preservar a hierarquia entre introdução, formulário e ajuda.",
-      "Do manter os focos visíveis e respeitar movimento reduzido.",
-      "Do usar o dourado nos contatos do cartucho."
+      "Do preservar o contraste entre o entorno e o formulário claro.",
+      "Do manter foco visível, mensagens textuais e movimento reduzido.",
+      "Do usar Outfit local e atualizar a prévia com nome e logo."
     ],
     "donts": [
-      "Don't substituir Outfit local por fontes externas.",
-      "Don't esconder erros apenas em cor: preserve a mensagem textual.",
-      "Don't transformar a ajuda e a chave em cartões com elevação decorativa."
+      "Don't recuperar o fundo anterior de bancada azulada e verde.",
+      "Don't substituir o formulário por elementos decorativos do console.",
+      "Don't ocultar erros ou limitações de compatibilidade apenas em cor."
     ]
   }
 }

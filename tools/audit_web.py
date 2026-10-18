@@ -5,7 +5,7 @@ import sys
 from zipfile import ZipFile
 
 root = Path(sys.argv[1] if len(sys.argv) > 1 else 'web/site')
-expected = {'index.html', 'icon.svg', 'templates/catalog.json', 'templates/emerald.apk', 'templates/firered.apk', 'templates/gba.apk'}
+expected = {'index.html', 'icon.svg', 'logos/emerald.webp', 'logos/firered.webp', 'templates/catalog.json', 'templates/emerald.apk', 'templates/firered.apk', 'templates/gba.apk'}
 for path in root.rglob('*'):
     if not path.is_file():
         continue

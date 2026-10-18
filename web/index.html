@@ -1,46 +1,335 @@
 <!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#25485e">
-  <meta name="description" content="Transforme sua ROM GBA em um APK Android. Geração local no navegador, sem conta e sem enviar seu jogo.">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
-  <link rel="icon" href="./icon.svg" type="image/svg+xml">
-  <title>GBA Studio · Seu jogo no Android</title>
-  <link rel="stylesheet" href="/src/style.css">
-</head>
-<body>
-  <header class="masthead"><a class="brand" href="./" aria-label="GBA Studio, início"><span class="brand-mark" aria-hidden="true"></span>GBA Studio</a><span class="header-note">Do seu GBA para o Android</span></header>
-  <main>
-    <section class="intro" aria-labelledby="heading">
-      <h1 id="heading">Um lugar no celular<br>para o seu jogo.</h1>
-      <p>Escolha sua ROM de Game Boy Advance e leve um aplicativo com controles, saves e o núcleo mGBA.</p>
-      <div class="local-note"><span class="local-dot" aria-hidden="true"></span><div><strong>Seu jogo fica com você.</strong><p>A ROM é processada neste navegador. Sem upload, sem conta.</p></div></div>
-      <ol class="journey"><li>Escolha uma ROM .gba</li><li>Gere seu aplicativo</li><li>Baixe e instale no Android</li></ol>
-      <p class="device-note">Android 8 ou posterior · ARM e x86_64</p>
-    </section>
-    <section class="workbench" aria-label="Criar aplicativo Android">
-      <form id="generator">
-        <fieldset id="options">
-          <legend class="sr-only">Configurar APK</legend>
-          <div class="cartridge" id="drop-zone">
-            <div class="cartridge-top"><span>GAME BOY ADVANCE</span><span aria-hidden="true">GBA</span></div>
-            <label class="rom-label" for="rom"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 3h7l5 5v13H5V3h2Z"/><path d="M14 3v6h5M8 14h8m-8 4h5"/></svg><strong id="rom-name">Escolher sua ROM</strong><span id="rom-detail">Clique ou arraste um arquivo .gba · até 32 MiB</span></label>
-            <input id="rom" type="file" accept=".gba" aria-describedby="rom-detail">
-            <div class="cartridge-pins" aria-hidden="true"></div>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#282344" />
+    <meta
+      name="description"
+      content="Sua ROM de GBA, seu aplicativo Android. Gere APKs no navegador ou offline no Linux e Windows, sem enviar seu jogo."
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <title>GBA Studio — Do cartucho ao Android</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#generator">Ir para o gerador</a>
+    <header class="site-header wrap">
+      <a class="brand" href="./" aria-label="GBA Studio, início"
+        ><svg viewBox="0 0 48 36" aria-hidden="true">
+          <rect x="1" y="3" width="46" height="30" rx="10" />
+          <rect
+            class="mark-screen"
+            x="15"
+            y="9"
+            width="18"
+            height="17"
+            rx="3"
+          />
+          <path d="M6 18h6m-3-3v6m28-6h3m-1 6h3" /></svg
+        ><span>GBA<span class="brand-weight"> Studio</span></span></a
+      >
+      <nav aria-label="Navegação principal">
+        <a href="#downloads">Baixar para PC</a
+        ><a
+          class="repo-link"
+          href="https://github.com/WillianBr08/PortGBA-Mobile"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 17 17 7M7 7h10v10" /></svg></a
+        ><button
+          id="theme-toggle"
+          class="icon-button"
+          type="button"
+          aria-label="Ativar tema claro"
+          aria-pressed="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section class="studio wrap" aria-labelledby="main-title">
+        <div class="studio-story">
+          <h1 id="main-title">O seu GBA.<br /><span>Em outro bolso.</span></h1>
+          <p class="intro">
+            Transforme sua ROM em um aplicativo Android. Com os controles, os
+            saves e toda a vontade de jogar mais uma vez.
+          </p>
+          <div class="handheld" aria-label="Prévia do aplicativo">
+            <div class="shoulder shoulder-left"></div>
+            <div class="shoulder shoulder-right"></div>
+            <div class="device-face">
+              <div class="device-dpad" aria-hidden="true"></div>
+              <div class="device-screen">
+                <div class="screen-light" aria-hidden="true"></div>
+                <img
+                  id="preview-logo"
+                  class="preview-icon"
+                  src="./icon.svg"
+                  width="46"
+                  height="46"
+                  alt=""
+                /><span id="preview-title">Seu próximo jogo</span
+                ><span class="screen-caption" aria-hidden="true"
+                  >GAME BOY ADVANCE</span
+                >
+              </div>
+              <div class="device-buttons" aria-hidden="true">
+                <i>B</i><i>A</i>
+              </div>
+              <div class="device-speaker" aria-hidden="true">
+                <i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+            <div class="device-brand" aria-hidden="true">GBA STUDIO</div>
           </div>
-          <div class="field"><label for="title">Nome no celular <span>opcional</span></label><input id="title" type="text" maxlength="100" placeholder="O nome da sua ROM" autocomplete="off"><p>Preenchido ao escolher o jogo. Você pode mudar.</p></div>
-          <div class="field"><label for="logo">Logo do aplicativo <span>opcional</span></label><select id="logo"><option value="auto">Automática · detectar pelo jogo</option><option value="emerald">Emerald · Rayquaza</option><option value="firered">FireRed · Charizard</option><option value="gba">GBA · neutra</option></select></div>
-          <button id="generate" class="primary" type="submit" disabled>Gerar APK <span aria-hidden="true">→</span></button>
-        </fieldset>
-      </form>
-      <div id="status-panel" class="status-panel" hidden><p id="status" role="status" aria-live="polite"></p><progress id="progress" max="100" value="0" aria-label="Progresso da geração" hidden></progress><p id="error" role="alert" hidden></p><a id="download" class="download" hidden>Baixar APK <span aria-hidden="true">↓</span></a><p id="install-note" hidden>Abra o APK no Android e permita a instalação pelo navegador quando solicitado. Seus saves e estados podem ser importados no menu do jogo.</p></div>
-      <noscript>Ative o JavaScript para montar o APK neste navegador.</noscript>
-    </section>
-    <details class="key-panel"><summary>Sua chave de atualização <span id="key-label">Local a este navegador</span></summary><div class="key-content"><p>A chave permite atualizar seus APKs sem desinstalar. Exporte um backup antes de limpar os dados do navegador ou trocar de dispositivo. O endereço do site também define onde a chave fica guardada.</p><p>O backup contém sua chave privada sem senha. Guarde-o em um lugar seguro. Restaurar outra chave afeta as próximas gerações; os aplicativos existentes continuam associados à chave anterior.</p><div class="key-actions"><button id="export-key" type="button" class="secondary">Exportar backup</button><label class="secondary restore-label" for="restore-key">Restaurar backup<input id="restore-key" type="file" accept=".json,application/json"></label></div><p id="key-status" role="status" aria-live="polite"></p></div></details>
-    <section class="help" aria-label="Sobre os saves"><h2>Seu progresso vem depois.</h2><p>O APK leva apenas a ROM. No aplicativo, abra <strong>Menu → Saves</strong> para importar seu .sav ou um estado compatível com mGBA. Exporte seus saves antes de desinstalar.</p></section>
-  </main>
-  <footer><span>GBA Studio</span><span>Feito para os jogos que você leva junto.</span><span>Processamento local · mGBA</span></footer>
-  <script type="module" src="/src/main.ts"></script>
-</body>
+          <p class="preview-caption">
+            Uma nova casa para seus jogos favoritos.
+          </p>
+          <div class="local-proof">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z" />
+              <path d="m8 12 3 3 5-6" />
+            </svg>
+            <p>
+              <strong>Sua ROM fica com você.</strong><br />O processamento
+              acontece no seu dispositivo.
+            </p>
+          </div>
+        </div>
+        <section class="generator-panel" aria-labelledby="generator-title">
+          <div class="panel-heading">
+            <div>
+              <h2 id="generator-title">Vamos criar seu APK?</h2>
+              <p>Uma ROM. Alguns segundos. Tudo pronto.</p>
+            </div>
+            <span class="file-limit">até 50 MB</span>
+          </div>
+          <form id="generator" novalidate>
+            <fieldset id="options">
+              <legend class="sr-only">Configurar aplicativo</legend>
+              <div id="drop-zone" class="drop-zone">
+                <input
+                  id="rom"
+                  type="file"
+                  accept=".gba"
+                  aria-describedby="rom-detail file-error"
+                /><label for="rom"
+                  ><span class="upload-symbol"
+                    ><svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 4h14v16H5zM8 4v6h8V4M8 16h8" /></svg></span
+                  ><strong id="rom-name">Escolher uma ROM</strong
+                  ><span id="rom-detail"
+                    >Arraste seu arquivo .gba ou clique para escolher</span
+                  ><span class="browse-label" aria-hidden="true"
+                    >Procurar arquivo
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 12h14m-6-6 6 6-6 6" /></svg></span
+                ></label>
+              </div>
+              <p id="file-error" class="field-error" role="alert" hidden></p>
+              <p id="compatibility-note" class="compatibility-note" hidden>
+                Arquivo acima de 32 MiB: o APK preserva todos os bytes, mas o
+                núcleo GBA mapeia ROMs comuns até 32 MiB. A execução deste jogo
+                pode ser limitada.
+              </p>
+              <div class="form-row">
+                <div class="field">
+                  <label for="title"
+                    >Nome no Android <span>opcional</span></label
+                  ><input
+                    id="title"
+                    type="text"
+                    maxlength="100"
+                    placeholder="O nome do seu jogo"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="field">
+                  <label for="logo">Logo <span>opcional</span></label
+                  ><select id="logo">
+                    <option value="auto">Automática</option>
+                    <option value="emerald">Emerald</option>
+                    <option value="firered">FireRed</option>
+                    <option value="gba">GBA Studio</option>
+                  </select>
+                </div>
+              </div>
+              <p class="field-hint">
+                O nome e a logo são preenchidos automaticamente.
+              </p>
+              <button
+                id="generate"
+                class="primary-button"
+                type="submit"
+                disabled
+              >
+                <span>Gerar APK</span
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-6-6 6 6-6 6" />
+                </svg>
+              </button>
+            </fieldset>
+          </form>
+          <div id="status-panel" class="status-panel" hidden>
+            <div class="status-heading">
+              <p id="status" role="status" aria-live="polite"></p>
+              <button id="cancel" class="text-button" type="button" hidden>
+                Cancelar
+              </button>
+            </div>
+            <progress
+              id="progress"
+              max="100"
+              value="0"
+              aria-label="Progresso da geração"
+              hidden
+            ></progress>
+            <p id="error" class="field-error" role="alert" hidden></p>
+            <a id="download" class="download-button" hidden
+              >Baixar APK
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4" /></svg
+            ></a>
+            <p id="install-note" hidden>
+              Abra o APK no Android e permita a instalação quando solicitado.
+              Importe seu progresso pelo menu Saves do jogo.
+            </p>
+          </div>
+          <div class="panel-footer">
+            <span
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m5 12 4 4L19 6" /></svg
+              >Sem conta ou upload</span
+            ><span>Android 8+</span><span>mGBA</span>
+          </div>
+          <noscript
+            >Ative o JavaScript para gerar seu APK neste dispositivo.</noscript
+          >
+        </section>
+      </section>
+      <section class="below-studio wrap" aria-label="Chave e progresso">
+        <details class="key-panel">
+          <summary>
+            <span class="detail-icon"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="8" cy="9" r="5" />
+                <path d="m12 13 8 8m-3-3 3-3m-6 0 3-3" /></svg></span
+            ><span
+              ><strong>Sua chave, suas atualizações.</strong
+              ><span id="key-label"
+                >Guarde um backup para atualizar seus APKs.</span
+              ></span
+            ><svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </summary>
+          <div class="key-content">
+            <p>
+              A chave fica neste navegador ou aplicativo. Exporte o backup antes
+              de limpar os dados ou trocar de dispositivo. A mesma ROM e a mesma
+              chave permitem atualizar o aplicativo sem desinstalar.
+            </p>
+            <p>
+              O backup contém sua chave privada sem senha. Guarde em local
+              seguro. Restaurar outra chave afeta as próximas gerações.
+            </p>
+            <div class="key-actions">
+              <button id="export-key" class="outline-button" type="button">
+                Exportar backup</button
+              ><label class="outline-button restore-label" for="restore-key"
+                >Restaurar backup<input
+                  id="restore-key"
+                  type="file"
+                  accept=".json,application/json"
+              /></label>
+            </div>
+            <p id="key-status" role="status" aria-live="polite"></p>
+          </div>
+        </details>
+        <div class="save-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 4h12l3 3v13H4V4h1Zm3 0v6h8V4M8 20v-6h8v6" />
+          </svg>
+          <p>
+            <strong>Seu progresso também vai junto.</strong><br />Depois de
+            instalar, importe .sav e estados compatíveis em <b>Menu → Saves</b>.
+            O APK inclui apenas sua ROM.
+          </p>
+        </div>
+      </section>
+      <section
+        id="downloads"
+        class="downloads-section wrap"
+        aria-labelledby="downloads-title"
+      >
+        <div class="downloads-intro">
+          <h2 id="downloads-title">Seu estúdio.<br />Também offline.</h2>
+          <p>
+            Baixe uma vez. Gere seus APKs sem internet, sem instalar ferramentas
+            Android.
+          </p>
+        </div>
+        <div class="desktop-downloads">
+          <a
+            class="platform-download"
+            href="https://github.com/WillianBr08/PortGBA-Mobile/releases/latest/download/GBA-Studio-linux-x64.AppImage"
+            ><svg class="platform-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="14" rx="2" />
+              <path d="M8 21h8m-4-4v4m-6-11 3 3-3 3m5-1h5" /></svg
+            ><span
+              ><strong>Baixar para Linux</strong
+              ><small>AppImage · x64 · portátil</small></span
+            ><svg class="download-arrow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4" /></svg></a
+          ><a
+            class="platform-download"
+            href="https://github.com/WillianBr08/PortGBA-Mobile/releases/latest/download/GBA-Studio-win-x64.exe"
+            ><svg class="platform-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="m3 5 8-1v7H3V5Zm10-1 8-1v8h-8V4ZM3 13h8v7l-8-1v-6Zm10 0h8v8l-8-1v-7Z"
+              /></svg
+            ><span
+              ><strong>Baixar para Windows</strong
+              ><small>EXE · x64 · Windows 10 ou posterior</small></span
+            ><svg class="download-arrow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4" /></svg
+          ></a>
+          <p class="download-help">
+            No Linux, permita executar o AppImage. No Windows, o aplicativo não
+            tem certificado comercial.
+            <a
+              href="https://github.com/WillianBr08/PortGBA-Mobile/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Versões e checksums</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer wrap">
+      <a class="footer-brand" href="./">GBA Studio</a
+      ><span>Feito para continuar a partida.</span
+      ><a
+        href="https://github.com/WillianBr08/PortGBA-Mobile"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Código aberto</a
+      >
+    </footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

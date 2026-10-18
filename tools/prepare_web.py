@@ -24,10 +24,10 @@ def prepare():
     output.mkdir(parents=True, exist_ok=True)
     fonts = ROOT / 'web/public/fonts'
     fonts.mkdir(parents=True, exist_ok=True)
-    for p in (ROOT / 'app/src/main/assets/fonts').iterdir():
+    for p in (ROOT / 'android/app/src/main/assets/fonts').iterdir():
         if p.is_file():
             shutil.copy2(p, fonts / p.name)
-    for p in (ROOT / 'app/src/main/assets/licenses').glob('*OFL.txt'):
+    for p in (ROOT / 'android/app/src/main/assets/licenses').glob('*OFL.txt'):
         shutil.copy2(p, fonts / p.name)
     libraries = [ROOT / 'build/apk/lib' / abi / 'libeliteredux.so' for abi in ('arm64-v8a', 'armeabi-v7a', 'x86_64')]
     for p in libraries + [ROOT / 'build/dex/classes.dex', ROOT / 'build/res/resources.zip']:
@@ -36,7 +36,7 @@ def prepare():
     catalog = {'version': 1, 'package': PACKAGE, 'title': TITLE, 'templates': {}}
     with tempfile.TemporaryDirectory(prefix='gba-web-') as tmp:
         for logo in ('emerald', 'firered', 'gba'):
-            manifest = ET.parse(ROOT / 'app/src/main/AndroidManifest.xml')
+            manifest = ET.parse(ROOT / 'android/app/src/main/AndroidManifest.xml')
             manifest.getroot().set('package', PACKAGE)
             app = manifest.getroot().find('application')
             app.set(ANDROID + 'label', TITLE)
@@ -50,9 +50,9 @@ def prepare():
                 for p in libraries:
                     z.write(p, 'lib/' + p.parent.name + '/' + p.name, compress_type=ZIP_STORED)
                 for folder in ('fonts', 'licenses'):
-                    for p in sorted((ROOT / 'app/src/main/assets' / folder).rglob('*')):
+                    for p in sorted((ROOT / 'android/app/src/main/assets' / folder).rglob('*')):
                         if p.is_file():
-                            z.write(p, 'assets/' + p.relative_to(ROOT / 'app/src/main/assets').as_posix(), compress_type=ZIP_DEFLATED)
+                            z.write(p, 'assets/' + p.relative_to(ROOT / 'android/app/src/main/assets').as_posix(), compress_type=ZIP_DEFLATED)
             # Fail closed: no source game directory, game.json, saves or signing keys.
             with ZipFile(target) as z:
                 for name in z.namelist():

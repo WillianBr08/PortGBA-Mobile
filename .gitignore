@@ -24,11 +24,8 @@ node_modules/
 /output/
 /.playwright-cli/
 
-# Upstream regression inputs are not part of the generator distribution
-/vendor/mgba/cinema/
-
-# Private reverse-engineering excerpts, never source inputs
-/docs/rom-boot-*.bin
-/docs/rea-entry.json
-/docs/rea-header.json
-/docs/rea-reset.json
+# Desktop distribution artifacts
+/desktop/release/
+/desktop/site/
+*.AppImage
+*.exe

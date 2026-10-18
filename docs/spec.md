@@ -19,7 +19,7 @@ Refazer o site do zero com referências ao GBA, conforme o pedido e a confirmaç
 - AppImage e EXE executam o mesmo gerador offline, sem SDK/JDK/NDK instalados pelo usuário. Chave persiste entre reinícios por origem estável; backups permitem migração.
 - Downloads reais em GitHub Releases e links no site; EXE sem assinatura comercial identificado na documentação.
 - Manter somente fontes, dependências declaradas, licenças, testes relevantes e documentação atual. Remover runtimes duplicados e relatórios históricos do Git atual; preservar cópia privada local.
-- mGBA como submódulo oficial no commit existente; CI faz checkout do submódulo. Não reescrever histórico nem publicar ROMs, saves ou chaves.
+- mGBA obtido do repositório oficial no commit existente; preparação aplica o patch de I/O já usado pelo projeto. Não reescrever histórico nem publicar ROMs, saves ou chaves.
 
 ## Definition of Done
 Testes de limites e assinatura, TypeScript/build, compilação Android limpa, auditoria de arquivos, geração no navegador desktop/mobile, AppImage executado, Windows produzido e verificado em runner Windows, pipeline/release/Pages concluídos. Registrar evidências e limites reais em docs/testing.md. Publicar apenas depois das verificações relevantes.
