@@ -1,0 +1,19 @@
+/* Elite Redux 2.65.4.1b: preserve the battle-script return address for Flame Burst. */
+#include "engine.h"
+#include <stdlib.h>
+#include <string.h>
+static const unsigned char original[] = { 0x31, 0x4b, 0x31, 0x4a, 0x1a, 0x60, 0xfe, 0xf7, 0x6a, 0xff };
+static const unsigned char branch[] = { 0xc0, 0x46, 0x00, 0x4b, 0x18, 0x47, 0x01, 0xf0, 0xff, 0x09 };
+static const unsigned char payload[] = { 0x0f, 0xb4, 0x06, 0x4b, 0x1a, 0x68, 0x01, 0x32, 0x1a, 0x60, 0x05, 0x48, 0x05, 0x4b, 0x00, 0xf0, 0x03, 0xf8, 0x0f, 0xbc, 0x04, 0x4b, 0x18, 0x47, 0x18, 0x47, 0xc0, 0x46, 0xe8, 0xc6, 0x01, 0x02, 0xf6, 0x81, 0x28, 0x08, 0xf5, 0x4e, 0x0c, 0x08, 0x45, 0xca, 0x09, 0x08 };
+int elite_apply_compatibility(struct EliteEngine* e) {
+    if (getenv("ELITE_DISABLE_COMPAT")) return 0;
+    if (e->core->romSize(e->core) != 33554432) return 0;
+    uint32_t checksum=0;
+    e->core->checksum(e->core,&checksum,mCHECKSUM_CRC32);
+    if (checksum != 0x1d230210u) return 0;
+    for(unsigned i=0;i<sizeof(original);i++) if(e->core->rawRead8(e->core,0x0809db66+i,0)!=original[i])return 0;
+    for(unsigned i=0;i<sizeof(payload);i++) if(e->core->rawRead8(e->core,0x09fff000+i,0)!=0xff)return 0;
+    for(unsigned i=0;i<sizeof(payload);i++)e->core->rawWrite8(e->core,0x09fff000+i,0,payload[i]);
+    for(unsigned i=0;i<sizeof(branch);i++)e->core->rawWrite8(e->core,0x0809db66+i,0,branch[i]);
+    return 1;
+}

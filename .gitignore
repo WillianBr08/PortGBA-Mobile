@@ -1,0 +1,34 @@
+/build/
+/dist/
+/.private/
+/captures/
+/ports/
+__pycache__/
+
+# Local inputs, credentials and generated website artifacts
+*.gba
+*.gb
+*.gbc
+*.sav
+*.ss[0-9]*
+*.working
+*.jks
+*.keystore
+*.pk8
+*.apk
+*.bak
+node_modules/
+/web/public/templates/
+/web/public/fonts/
+/web/site/
+/output/
+/.playwright-cli/
+
+# Upstream regression inputs are not part of the generator distribution
+/vendor/mgba/cinema/
+
+# Private reverse-engineering excerpts, never source inputs
+/docs/rom-boot-*.bin
+/docs/rea-entry.json
+/docs/rea-header.json
+/docs/rea-reset.json
