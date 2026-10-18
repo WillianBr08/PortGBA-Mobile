@@ -4,8 +4,8 @@ Verificado em 18/10/2026. Testes locais usam arquivos sintéticos, sem distribui
 
 | Área | Evidência |
 | --- | --- |
-| Android | Bases ARM64, ARMv7 e x86_64 recompiladas após reorganizar as pastas. Teste Java de controles aprovado. |
-| Empacotador | Cinco testes aprovados; fronteiras de 50.000.000 e 50.000.001 bytes. Build TypeScript/Vite aprovado. |
+| Android | Bases ARM64, ARMv7 e x86_64 compiladas também em checkout limpo após reorganizar as pastas. Teste Java de controles aprovado. |
+| Empacotador | Cinco testes aprovados; fronteiras de 50.000.000 e 50.000.001 bytes no TypeScript e no Python. Build TypeScript/Vite aprovado. |
 | APK real | Gerado no navegador com 50 MB: assinatura v2 aceita por apksigner, alinhamento de 16 KiB aceito por zipalign, tamanho e último byte da ROM preservados. |
 | Fluxo web | Seleção, nome/logo, cancelamento, nova geração, download e aviso para ROM maior que 32 MiB. Layouts desktop, celular e tema claro inspecionados. |
 | Privacidade | Tráfego observado na geração: somente leitura de assets/bases; nenhum envio da ROM ou chave. Auditoria da pasta pública aprovada. |
