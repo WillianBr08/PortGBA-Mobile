@@ -1,0 +1,44 @@
+{
+  "version": "3.0",
+  "apk_sha256": "d87c7d1ae54cade84e7773b4713154cdba907c2b8031a5a4326fe09921051ddd",
+  "android": "Android 11 / API 30 x86_64 emulator",
+  "physical_arm_tested": false,
+  "startup_home_without_prompts": true,
+  "existing_auto_preserved_on_start_and_home_editor": true,
+  "hud_save_load_slot": 0,
+  "hud_save_load_without_dialog": true,
+  "individual_button_size_and_visibility_persisted": true,
+  "sav_import_export_exact_progress_bytes": 131072,
+  "sav_load_respects_disk_snapshot": true,
+  "state_import_exact_copy_to_auto": true,
+  "generator_logos": [
+    "auto",
+    "emerald",
+    "firered",
+    "gba"
+  ],
+  "generator_no_saves_by_default": true,
+  "firered_apk_installed_with_selected_icon": true,
+  "personal_save_copies_removed_from_project": true,
+  "original_pc_saves_unchanged": true,
+  "pc_rom_patch": {
+    "rom": "/home/willian/Documentos/GBA/Elite Redux/Elite Redux (2.65.4.1b).gba",
+    "backup": "/home/willian/Documentos/GBA/Elite Redux/Elite Redux (2.65.4.1b).gba.antes-ninetales.bak",
+    "before_sha256": "926098fa9f6b29b469fa351e80e4f018285006ad10a4eb5bc255d14d6d54acfc",
+    "after_sha256": "38c2e818a99c27e09e852da9dbc6eb473693b829ba76d324806eff581823011b",
+    "modified_ranges": [
+      [
+        645990,
+        10
+      ],
+      [
+        33550336,
+        44
+      ]
+    ],
+    "saves_modified": false
+  },
+  "pc_replay_frames": 3600,
+  "pc_replay_wrapper_compat_disabled": true,
+  "pc_replay_exit_code": 0
+}

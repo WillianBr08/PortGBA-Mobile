@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=GBA Studio
+Comment=Gerar APK privado com controles e saves para uma ROM GBA
+Exec="/home/willian/Documentos/GBA/GBA-Studio/portar-gba.sh" --gui
+Icon=applications-games
+Terminal=false
+Categories=Game;Development;

@@ -1,0 +1,34 @@
+{
+  "version": "2.0",
+  "apk_sha256": "e8fba5a49555e8aaaa085f9052a2a6a001ca7705a654166d901788f181e26247",
+  "android": "API 30 x86_64 emulator; no physical ARM device",
+  "battle_replay": {
+    "original_state": 2,
+    "disabled_compat_exit": 3,
+    "disabled_compat_stuck_frame": 1489,
+    "enabled_compat_exit": 0,
+    "enabled_compat_frames": 3600,
+    "pre_effect_equal_frames": [
+      0,
+      60,
+      120,
+      300,
+      480
+    ]
+  },
+  "original_files_unchanged": true,
+  "original_save_states_bundled": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "hud_drag_persistence": true,
+  "settings_fast_rate_6": true,
+  "settings_fps_toggle": true,
+  "generic_apk_installed": true,
+  "generic_apk_excludes_elite_assets": true,
+  "apk_signature_v2_v3": true,
+  "zipalign_16k": true,
+  "menu_orientation_resize_regression": true
+}

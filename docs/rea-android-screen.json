@@ -1,0 +1,41 @@
+{
+  "evidence_id": "ev_5b1f3cbc719413a5629413f27efde48b2423ab4febf59016843b23d3f4f20804",
+  "subject": null,
+  "provider": {
+    "id": "adb",
+    "name": "Android Debug Bridge",
+    "version": "37.0.0-android-tools"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "capture_adb_screen",
+  "parameters": {
+    "serial": "emulator-5556",
+    "output_directory": "/home/willian/Documentos/GBA/Elite Redux/elite-redux-mobile/captures/rea-runtime"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "client": {
+      "binary_path": "adb",
+      "path_source": "path",
+      "version": "37.0.0-android-tools",
+      "installed_path": "/usr/bin/adb"
+    },
+    "serial": "emulator-5556",
+    "local_path": "/home/willian/Documentos/GBA/Elite Redux/elite-redux-mobile/captures/rea-runtime/screen.png",
+    "bytes": 76973,
+    "sha256": "ca10eadf66c990cb92405b9f58fd8923355aa4e06ed73bea6d58eea84779d546",
+    "width": 1080,
+    "height": 1920
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The capture is one frame at read time; no recording or interaction occurred"
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

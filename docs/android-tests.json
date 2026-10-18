@@ -1,0 +1,22 @@
+{
+  "serial": "emulator-5556",
+  "android": "11 / API 30 x86_64 emulator",
+  "passed": [
+    "Android loaded original state 1",
+    "Android loaded original state 2",
+    "Android loaded original state 3",
+    "Android loaded original state 4",
+    "Manual state saved in slot 5",
+    "Manual state reloaded",
+    "Fast forward 1x/2x/4x toggles",
+    "Landscape controls present",
+    "Background lifecycle writes automatic state",
+    "Process restart offers and loads automatic state",
+    "SAF ZIP export verified against original states and saves",
+    "SAF battery import verified byte-for-byte (128 KiB payload)",
+    "SAF state import verified byte-for-byte in selected slot"
+  ],
+  "logcat": "--------- beginning of kernel\n--------- beginning of main\n--------- beginning of system\n",
+  "apk_sha256": "db03ef17a152f9f936a9ae0189ecee422edb8b4067f25adcdd902d53ef6353fc",
+  "final_update": "Final APK installed over existing app; automatic state resumed and both orientations inspected."
+}
