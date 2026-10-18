@@ -34,7 +34,7 @@ O site final fica em `web/site/`. Os templates gerados em `web/public/templates/
 
 O workflow `.github/workflows/pages.yml` compila as três arquiteturas, prepara as bases sem ROM, testa a montagem e assinatura, verifica o APK com `apksigner` e `zipalign`, audita o site e cria um artefato Pages. Ele funciona em `main` e `master` e pode ser executado manualmente.
 
-Repositório de destino: [WillianBr08/PortGBA-Mobile](https://github.com/WillianBr08/PortGBA-Mobile). Endereço previsto do site: `https://willianbr08.github.io/PortGBA-Mobile/`.
+Repositório de destino: [WillianBr08/PortGBA-Mobile](https://github.com/WillianBr08/PortGBA-Mobile). Site publicado: [abrir GBA Studio](https://willianbr08.github.io/PortGBA-Mobile/).
 
 Para configurar a publicação:
 

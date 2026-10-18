@@ -21,7 +21,9 @@ Não foram testados aparelhos físicos ARM, um sistema Android com páginas reai
 
 O conteúdo versionado foi extraído em uma pasta limpa e recompilado nas três arquiteturas em 18/10/2026. Preparação sem chave/ROM, instalação das dependências, testes, build web e auditoria também passaram nessa cópia. O projeto foi enviado a [WillianBr08/PortGBA-Mobile](https://github.com/WillianBr08/PortGBA-Mobile), preservando o commit inicial. GitHub Pages usa a origem workflow e a variável `GBA_STUDIO_PUBLISH=true`.
 
-A etapa atual é SHIP: a execução remota e o deploy são acompanhados em [Actions](https://github.com/WillianBr08/PortGBA-Mobile/actions/workflows/pages.yml). A publicação só é considerada confirmada após workflow bem-sucedido, resposta HTTP 200 e geração de APK no endereço público `https://willianbr08.github.io/PortGBA-Mobile/`.
+Etapa SHIP concluída em 18/10/2026. O [workflow 39099743331](https://github.com/WillianBr08/PortGBA-Mobile/actions/runs/39099743331), revisão `b06ca04`, terminou com build e deploy bem-sucedidos. O [site público](https://willianbr08.github.io/PortGBA-Mobile/) e o catálogo responderam HTTP 200. Chromium gerou e baixou o APK do Quetzal a partir desse endereço, sem erros de execução ou console. `apksigner` confirmou assinatura v2, `zipalign -c -P 16 4` passou, e a ROM incorporada é idêntica à entrada. Durante a geração foram observados somente GET do Worker, catálogo e base Emerald na mesma origem, todos sem corpo de envio.
+
+O código e a publicação podem ser acompanhados em [Actions](https://github.com/WillianBr08/PortGBA-Mobile/actions/workflows/pages.yml). Atualizações posteriores devem manter essas mesmas verificações.
 
 Para interromper novas publicações, defina `GBA_STUDIO_PUBLISH=false`; isso preserva a versão já publicada. Para reverter uma atualização, reverta o commit problemático em main e execute o workflow. Na primeira publicação, se for necessário retirar o site, use Settings → Pages → Unpublish site. Não acrescente telemetria que possa enviar ROMs ou chaves; a verificação pública usa status HTTP, logs do Actions e o fluxo de geração no navegador.
 
