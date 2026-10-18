@@ -24,3 +24,5 @@ O conteúdo versionado foi extraído em uma pasta limpa e recompilado nas três 
 A etapa atual é SHIP: a execução remota e o deploy são acompanhados em [Actions](https://github.com/WillianBr08/PortGBA-Mobile/actions/workflows/pages.yml). A publicação só é considerada confirmada após workflow bem-sucedido, resposta HTTP 200 e geração de APK no endereço público `https://willianbr08.github.io/PortGBA-Mobile/`.
 
 Para interromper novas publicações, defina `GBA_STUDIO_PUBLISH=false`; isso preserva a versão já publicada. Para reverter uma atualização, reverta o commit problemático em main e execute o workflow. Na primeira publicação, se for necessário retirar o site, use Settings → Pages → Unpublish site. Não acrescente telemetria que possa enviar ROMs ou chaves; a verificação pública usa status HTTP, logs do Actions e o fluxo de geração no navegador.
+
+A primeira execução remota identificou a dependência obsoleta `tools` no padrão de android-actions/setup-android@v3. O workflow fixa explicitamente `packages: platform-tools`; plataforma, Build Tools e NDK continuam instalados com versões declaradas na etapa seguinte.
